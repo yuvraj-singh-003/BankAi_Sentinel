@@ -50,7 +50,7 @@ def load_bank_data():
 @st.cache_data
 def load_credit_data():
     try:
-        df_credit = pd.read_excel("./credit_score_20000.xlsx", sheet_name="Credit_Data")
+        df_credit = pd.read_excel("./credit_score.xlsx", sheet_name="Credit_Data")
         if len(df_credit) > 12000:
             df_credit = df_credit.sample(8000, random_state=42).reset_index(drop=True)
         return df_credit
